@@ -209,7 +209,7 @@ export default function Deposit() {
         document.body.removeChild(textArea);
       }
       toast.success("Wallet address copied to clipboard!", { autoClose: 1000 });
-    } catch (error) {
+    } catch {
       toast.error("Failed to copy wallet address", { autoClose: 1000 });
     }
   };

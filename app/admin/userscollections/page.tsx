@@ -171,8 +171,13 @@ const AdminUsersCollectionsPage: React.FC = () => {
         const userCredentials = JSON.parse(
           localStorage.getItem("user_credentials") || "[]"
         );
-        const userRecord = userCredentials.find(
-          (user: any) =>
+        interface UserCredential {
+          username: string;
+          email: string;
+          [key: string]: unknown;
+        }
+        const userRecord = (userCredentials as UserCredential[]).find(
+          (user: UserCredential) =>
             user.username === artwork.userId || user.email === artwork.userId
         );
 
@@ -183,7 +188,7 @@ const AdminUsersCollectionsPage: React.FC = () => {
 
       // Create sale transaction
       const saleTransaction = {
-        id: `sale_${Date.now()}_${id}`,
+        id: `SALE_${Date.now()}_${id}`,
         type: "Sale" as const,
         status: "Approved" as const,
         date: new Date().toISOString(),

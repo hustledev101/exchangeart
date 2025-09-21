@@ -39,14 +39,6 @@ const GalleryPage: React.FC = () => {
     TRX: 0.1,
   });
 
-  const currencyToId = {
-    ETH: "ethereum",
-    SOL: "solana",
-    BTC: "bitcoin",
-    USDT: "tether",
-    TRX: "tron",
-  };
-
   useEffect(() => {
     // Get current user name from signup data
     const userSession = localStorage.getItem("user_session");

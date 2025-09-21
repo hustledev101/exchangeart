@@ -270,7 +270,7 @@ const TransactionsPage: React.FC = () => {
             transaction history.
           </p>
         ) : (
-          transactions.map((txn, index) => (
+          transactions.map((txn) => (
             <div
               key={txn.id}
               className="w-full bg-[#1A1B25] border border-gray-700 rounded p-4"
